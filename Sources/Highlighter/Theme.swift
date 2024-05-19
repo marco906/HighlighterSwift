@@ -9,8 +9,7 @@
 
 import Foundation
 
-
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
     import UIKit
     public typealias HRColor = UIColor
     public typealias HRFont  = UIFont
@@ -105,7 +104,7 @@ open class Theme {
         self.codeFont = font
         
         // Generate the bold and italic variants
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         let boldDescriptor    = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family:font.familyName,
                                                                   UIFontDescriptor.AttributeName.face:"Bold"])
         let italicDescriptor  = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family:font.familyName,
